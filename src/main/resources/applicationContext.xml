@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="languages.properties"/>
+
+    <bean id="germanLanguageBean"
+          class="org.max.javaprojects_spring1.GermanLanguage">
+    </bean>
+    <bean id="russianLanguageBean"
+          class="org.max.javaprojects_spring1.RussianLanguage">
+    </bean>
+    <bean id="japanesLanguageBean"
+          class="org.max.javaprojects_spring1.JapanesLanguage">
+    </bean>
+
+    <bean id="languageSpeakerBean"
+          class="org.max.javaprojects_spring1.LanguageSpeaker">
+        <property name="languageList">
+            <list>
+                <ref bean="japanesLanguageBean"/>
+                <ref bean="germanLanguageBean"/>
+                <ref bean="russianLanguageBean"/>
+            </list>
+        </property>
+        <property name="name" value="${LanguageSpeaker.name}"/>
+    </bean>
+
+</beans>
