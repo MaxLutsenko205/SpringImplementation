@@ -20,13 +20,7 @@
 
     <bean id="languageSpeakerBean"
           class="org.max.javaprojects_spring1.LanguageSpeaker">
-        <property name="languageList">
-            <list>
-                <ref bean="japanesLanguageBean"/>
-                <ref bean="germanLanguageBean"/>
-                <ref bean="russianLanguageBean"/>
-            </list>
-        </property>
+        <property name="languageList" ref="russianLanguageBean"/>
         <property name="name" value="${LanguageSpeaker.name}"/>
     </bean>
 
