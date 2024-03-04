@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LanguageSpeaker {
-    private List<Language> languageList = new ArrayList<>();
+    private Language language;
     private String name;
 
     public String getName() {
@@ -13,18 +13,14 @@ public class LanguageSpeaker {
     public void setName(String name) {
         this.name = name;
     }
-    public void setLanguageList(Language language) {
-        languageList.add(language);
+    public void setLanguage(Language language) {this.language = language;}
+
+    // IoC (inversion of control)
+    public LanguageSpeaker(Language language){
+        this.language = language;
     }
     public LanguageSpeaker(){}
-    // IoC (inversion of control)
-    public LanguageSpeaker(List<Language> languageList) {
-        this.languageList = languageList;
-    }
     public void Speak() {
-        for (Language language : languageList){
-            System.out.println("-"+language.getWord());
-        }
-
+        System.out.println(language.getWord());
     }
 }

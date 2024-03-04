@@ -19,8 +19,9 @@
     </bean>
 
     <bean id="languageSpeakerBean"
-          class="org.max.javaprojects_spring1.LanguageSpeaker">
-        <property name="languageList" ref="russianLanguageBean"/>
+          class="org.max.javaprojects_spring1.LanguageSpeaker"
+          scope="prototype">
+        <property name="language" ref="japanesLanguageBean"/>
         <property name="name" value="${LanguageSpeaker.name}"/>
     </bean>
 
